@@ -30,7 +30,7 @@
             android:shadowDx="2"
             android:shadowDy="2"
             android:shadowRadius="20"
-            android:text="@string/adminpanelTV"
+            android:text="@string/TvSiteManager"
             android:textColor="@color/white"
             android:textSize="34sp"
             android:textStyle="bold"
@@ -88,6 +88,16 @@
                 android:backgroundTint="@color/dark"
                 android:onClick="SupplierManagement"
                 android:text="@string/mapBtn"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnAddDelivery"
+                android:layout_width="@dimen/btnWidth2"
+                android:layout_height="@dimen/btnHeight2"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/dark"
+                android:onClick="AddDelivery"
+                android:text="@string/addDeliveryBtn"
                 android:textColor="@color/white" />
 
             <Button

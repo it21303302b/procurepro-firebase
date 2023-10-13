@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
-    tools:context=".DeliveryManagement">
-
+    tools:context=".ManageOrder">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView4"
@@ -31,7 +30,7 @@
             android:shadowDx="2"
             android:shadowDy="2"
             android:shadowRadius="20"
-            android:text="@string/TvDeliveries"
+            android:text="@string/Tvoreders"
             android:textColor="@color/white"
             android:textSize="34sp"
             android:textStyle="bold"
@@ -66,9 +65,8 @@
             app:layout_constraintHorizontal_bias="0.488"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView4"
-            tools:listitem="@layout/item_delivery" />
+            tools:listitem="@layout/item_order" />
 
     </androidx.cardview.widget.CardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

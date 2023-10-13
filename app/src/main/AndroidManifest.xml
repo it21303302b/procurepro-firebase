@@ -12,10 +12,16 @@
         android:theme="@style/Theme.Procure_Pro"
         tools:targetApi="31">
         <activity
+            android:name=".AddDelivery"
+            android:exported="false" />
+        <activity
+            android:name=".ManageOrder"
+            android:exported="false" />
+        <activity
             android:name=".DeliveryManagement"
             android:exported="false" />
         <activity
-            android:name=".SupplierManagement"
+            android:name=".OrderStatus"
             android:exported="false" />
         <activity
             android:name=".ManagePurchase"

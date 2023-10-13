@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
-    tools:context=".AddPurchase">
-
+    tools:context=".AddDelivery">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -37,7 +36,7 @@
                 android:shadowDx="2"
                 android:shadowDy="2"
                 android:shadowRadius="4"
-                android:text="@string/TvNewOrder"
+                android:text="@string/TvAddDelivery"
                 android:textAlignment="center"
                 android:textColor="@color/dark"
                 android:textSize="30dp"
@@ -55,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/TvStaffId"
+                android:text="@string/TvSite"
                 android:textColor="@color/mid"
                 android:textStyle="bold" />
 
@@ -63,7 +62,7 @@
                 android:id="@+id/etSectionName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/add_staff_id"
+                android:hint="@string/add_site_name"
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
                 android:textSize="10sp" />
@@ -73,7 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/TvOrderNumber"
+                android:text="@string/TvAddress"
                 android:textColor="@color/mid"
                 android:textStyle="bold" />
 
@@ -81,7 +80,7 @@
                 android:id="@+id/etDirections"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/add_order_number"
+                android:hint="@string/add_address"
                 android:inputType="textMultiLine"
                 android:textColor="@color/mid"
                 android:textSize="10dp" />
@@ -91,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/TvSite"
+                android:text="@string/TvDate"
                 android:textColor="@color/mid"
                 android:textStyle="bold" />
 
@@ -109,7 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/TvItem"
+                android:text="@string/TvPhone_number"
                 android:textColor="@color/mid"
                 android:textStyle="bold" />
 
@@ -117,7 +116,7 @@
                 android:id="@+id/etDirections2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/add_item_name"
+                android:hint="@string/add_phone_number"
                 android:inputType="textMultiLine"
                 android:textColor="@color/mid"
                 android:textSize="10dp" />
@@ -127,7 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/TvPrice"
+                android:text="@string/TvOrderNumber"
                 android:textColor="@color/mid"
                 android:textStyle="bold" />
 
@@ -135,7 +134,7 @@
                 android:id="@+id/etDirections3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/add_price"
+                android:hint="@string/add_order_number"
                 android:inputType="textMultiLine"
                 android:textColor="@color/mid"
                 android:textSize="10dp" />
@@ -155,6 +154,5 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

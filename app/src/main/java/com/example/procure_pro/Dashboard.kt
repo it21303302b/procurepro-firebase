@@ -18,12 +18,21 @@ class Dashboard : AppCompatActivity() {
     }
 
     fun ManagePurchase(view: View){
-        val dashIntent = Intent(this,ManagePurchase::class.java)
+        val dashIntent = Intent(this,ManageOrder::class.java)
+        startActivity(dashIntent)
+    }
+    fun OrderStatus(view: View){
+        val dashIntent = Intent(this,OrderStatus::class.java)
+        startActivity(dashIntent)
+    }
+
+    fun AddDelivery(view: View){
+        val dashIntent = Intent(this,AddDelivery::class.java)
         startActivity(dashIntent)
     }
 
     fun SupplierManagement(view: View){
-        val dashIntent = Intent(this,SupplierManagement::class.java)
+        val dashIntent = Intent(this,OrderStatus::class.java)
         startActivity(dashIntent)
     }
 
