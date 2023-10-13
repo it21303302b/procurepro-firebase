@@ -66,7 +66,7 @@
                 android:layout_height="@dimen/btnHeight2"
                 android:layout_margin="20dp"
                 android:backgroundTint="@color/dark"
-                android:onClick="Product"
+                android:onClick="AddPurchase"
                 android:text="@string/productsBtn"
                 android:textColor="@color/white" />
 
@@ -76,7 +76,7 @@
                 android:layout_height="@dimen/btnHeight2"
                 android:layout_margin="20dp"
                 android:backgroundTint="@color/dark"
-                android:onClick="Section"
+                android:onClick="ManagePurchase"
                 android:text="@string/sectionsBtn"
                 android:textColor="@color/white" />
 
@@ -86,7 +86,7 @@
                 android:layout_height="@dimen/btnHeight2"
                 android:layout_margin="20dp"
                 android:backgroundTint="@color/dark"
-                android:onClick="Section"
+                android:onClick="SupplierManagement"
                 android:text="@string/mapBtn"
                 android:textColor="@color/white" />
 
@@ -96,7 +96,7 @@
                 android:layout_height="@dimen/btnHeight2"
                 android:layout_margin="20dp"
                 android:backgroundTint="@color/dark"
-                android:onClick="home"
+                android:onClick="DeliverManagement"
                 android:text="@string/homeBtn"
                 android:textColor="@color/white" />
 

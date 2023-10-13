@@ -23,8 +23,8 @@
     <string name="TvSection">Section</string>
     <string name="productsBtn">Add purchase orders</string>
     <string name="sectionsBtn">Manage purchase orders</string>
-    <string name="mapBtn">Map</string>
-    <string name="homeBtn">Home</string>
+    <string name="mapBtn">Supplier Management</string>
+    <string name="homeBtn">Deliver Management</string>
     <string name="TvProducts">Products</string>
     <string name="Tvsections">Sections</string>
     <string name="itmbox">Here the available sections in this supermarket</string>
