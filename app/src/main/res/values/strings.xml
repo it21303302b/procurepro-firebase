@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Procure_Pro</string>
+    <string name="startBtn">start</string>
+    <string name="stopBtn">Stop</string>
+    <string name="description">Here are the Directions to Get</string>
+    <string name="discription2">First,</string>
+    <string name="directions">direction</string>
+    <string name="adminTv">Enter Site Manager Name and Password</string>
+    <string name="btnLogin">Login</string>
+    <string name="adminpanelTV">Welcome Site Manager</string>
+    <string name="addSectionBtn">Add section</string>
+    <string name="addProductbtn">add product</string>
+    <string name="updateProductbtn">update</string>
+    <string name="TVprocurePro">ProcurePro</string>
+    <string name="TVupdatesection">Update Section</string>
+    <string name="TvSectionName">Section Name</string>
+    <string name="TvDirections">Directions</string>
+    <string name="AddBtn">Add</string>
+    <string name="UpdateBtn">Update</string>
+    <string name="TvAddproduct">Add a New Product</string>
+    <string name="TvUpdateproduct">Update Product</string>
+    <string name="TvProductName">Product Name</string>
+    <string name="TvSection">Section</string>
+    <string name="productsBtn">Add purchase orders</string>
+    <string name="sectionsBtn">Manage purchase orders</string>
+    <string name="mapBtn">Map</string>
+    <string name="homeBtn">Home</string>
+    <string name="TvProducts">Products</string>
+    <string name="Tvsections">Sections</string>
+    <string name="itmbox">Here the available sections in this supermarket</string>
+    <string name="TvsecWI">Here is whats inside section</string>
+</resources>

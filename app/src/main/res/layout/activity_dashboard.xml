@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".Dashboard">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/light">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="30dp"
+            android:shadowColor="@color/txtShadow"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="20"
+            android:text="@string/adminpanelTV"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="20dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3"
+        app:layout_constraintVertical_bias="0.28">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnProductsAdmin"
+                android:layout_width="@dimen/btnWidth2"
+                android:layout_height="@dimen/btnHeight2"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/dark"
+                android:onClick="Product"
+                android:text="@string/productsBtn"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnSectionsAdmin"
+                android:layout_width="@dimen/btnWidth2"
+                android:layout_height="@dimen/btnHeight2"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/dark"
+                android:onClick="Section"
+                android:text="@string/sectionsBtn"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnViewMapAdmin"
+                android:layout_width="@dimen/btnWidth2"
+                android:layout_height="@dimen/btnHeight2"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/dark"
+                android:onClick="Section"
+                android:text="@string/mapBtn"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnHomeAdmin"
+                android:layout_width="@dimen/btnWidth2"
+                android:layout_height="@dimen/btnHeight2"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/dark"
+                android:onClick="home"
+                android:text="@string/homeBtn"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
