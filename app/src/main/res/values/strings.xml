@@ -14,6 +14,7 @@
     <string name="TvProducts">Products</string>
     <string name="Tvsections">Sections</string>
     <string name="TvNewOrder">Add New Order</string>
+    <string name="TvUpdateOrder">Update Order</string>
     <string name="TvsecWI">Here is whats inside section</string>
     <string name="TvSiteManager">Welcome Site Manager</string>
     <string name="TVlogin">Enter Site Manager Name and Password</string>
