@@ -50,7 +50,7 @@
             </View>
 
             <TextView
-                android:id="@+id/tvSectionName"
+                android:id="@+id/tvSiteManagerId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -59,7 +59,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etSectionName"
+                android:id="@+id/etSiteMgrId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/add_site_name"
@@ -68,7 +68,7 @@
                 android:textSize="10sp" />
 
             <TextView
-                android:id="@+id/tvDirection"
+                android:id="@+id/tvOrderNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -77,7 +77,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etDirections"
+                android:id="@+id/etOrderNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/add_address"
@@ -86,7 +86,7 @@
                 android:textSize="10dp" />
 
             <TextView
-                android:id="@+id/TvSite"
+                android:id="@+id/tvSite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -95,7 +95,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etDirections1"
+                android:id="@+id/etSiteName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/add_site_name"
@@ -104,7 +104,7 @@
                 android:textSize="10dp" />
 
             <TextView
-                android:id="@+id/TvItem"
+                android:id="@+id/tvItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -113,7 +113,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etDirections2"
+                android:id="@+id/etItemName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/add_phone_number"
@@ -122,7 +122,7 @@
                 android:textSize="10dp" />
 
             <TextView
-                android:id="@+id/TvPrice"
+                android:id="@+id/tvPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -131,7 +131,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etDirections3"
+                android:id="@+id/etPriceOrder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/add_order_number"

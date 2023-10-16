@@ -19,13 +19,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        Realm.init(this)
+        Realm.init(this)   //initialise realm to connect mongodb
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding?.root
         setContentView(view)
         supportActionBar?.hide()
 
-        val appId = "devicesync-agtgn" // Replace with your actual Realm app ID
+        val appId = "devicesync-agtgn" // connect to database with realm
 
         val config = AppConfiguration.Builder(appId)
             .build()
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         val username = binding?.etsitemgrName?.text.toString()
         val password = binding?.etEnterPassword?.text.toString()
 
-        // Create a Document with username and password fields1
+        // Create a Document with username and password fields
         val payload = Document("username", username).append("password", password)
 
         val credentials = Credentials.customFunction(payload)
@@ -46,14 +46,20 @@ class MainActivity : AppCompatActivity() {
             if (user.isSuccess) {
                 // Successfully logged in
                 val loggedInUser = user.get()
+                val userId = loggedInUser.id // Get the user's _id
+
+                Toast.makeText(this, "Login success!", Toast.LENGTH_SHORT).show()
+
                 val dashIntent = Intent(this, Dashboard::class.java)
+                dashIntent.putExtra("userId", userId) // Pass the user's _id to AddOrder
                 startActivity(dashIntent)
             } else {
                 // Failed to login, handle the error
                 val error = user.getError()
-                Toast.makeText(this, error?.localizedMessage ?: "Login failed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Invalid username or password!", Toast.LENGTH_SHORT).show()
             }
         }
     }
+
 
 }
