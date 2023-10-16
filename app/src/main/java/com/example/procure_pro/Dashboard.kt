@@ -13,8 +13,10 @@ class Dashboard : AppCompatActivity() {
     }
 
     fun AddPurchase(view: View){
-        val dashIntent = Intent(this,AddPurchase::class.java)
-        startActivity(dashIntent)
+        val userId = intent.getStringExtra("userId") // Get the user's _id from the intent
+        val addOrderIntent = Intent(this, AddOrder::class.java)
+        addOrderIntent.putExtra("userId", userId) // Pass the user's _id to AddOrder
+        startActivity(addOrderIntent)
     }
 
     fun ManagePurchase(view: View){

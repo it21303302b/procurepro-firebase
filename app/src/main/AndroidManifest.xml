@@ -30,7 +30,7 @@
             android:name=".ManagePurchase"
             android:exported="false" />
         <activity
-            android:name=".AddPurchase"
+            android:name=".AddOrder"
             android:exported="false" />
         <activity
             android:name=".Dashboard"

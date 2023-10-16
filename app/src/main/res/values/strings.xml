@@ -5,7 +5,7 @@
     <!--    text views-->
     <string name="TVprocurePro">ProcurePro</string>
     <string name="TVupdatesection">Update Section</string>
-    <string name="TvStaffId">Staff Id</string>
+    <string name="TvStaffId">Site Manager Id</string>
     <string name="TvOrderNumber">Order Number</string>
     <string name="TvAddDelivery">Add a New Delivery</string>
     <string name="TvUpdateproduct">Update Product</string>
@@ -45,10 +45,10 @@
 
 
     <!--    hints-->
-    <string name="add_staff_id">Add Staff Id</string>
+    <string name="add_staff_id">Add Site Manager Id</string>
     <string name="add_order_number">Add Order Number</string>
     <string name="add_phone_number">Add Phone Number</string>
-    <string name="add_site_name">Add Site ID</string>
+    <string name="add_site_name">Add Site Name</string>
     <string name="add_item_name">Add Item Name</string>
     <string name="add_price">Add Price</string>
     <string name="add_address">Add Address</string>
