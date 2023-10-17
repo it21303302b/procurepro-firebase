@@ -1,5 +1,6 @@
 package com.example.procure_pro
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -47,19 +48,24 @@ class AddOrder : AppCompatActivity() {
                 val orderKey = orderRef.push().key
                 if (orderKey != null) {
                     orderRef.child(orderKey).setValue(order)
-                }
-                Toast.makeText(this, "Data inserted successfully!", Toast.LENGTH_SHORT).show()
 
-                // Clear EditText fields after submitting
-                etSiteName.text.clear()
-                etItemName.text.clear()
-                etQtyOrder.text.clear()
+                    // Pass the orderKey to the UpdateOrder activity
+//                    val intent = Intent(this, Dashboard::class.java)
+//                    intent.putExtra("orderKey", orderKey)
+//                    startActivity(intent)
+
+                    Toast.makeText(this, "Data inserted successfully!", Toast.LENGTH_SHORT).show()
+
+                    // Clear EditText fields after submitting
+                    etSiteName.text.clear()
+                    etItemName.text.clear()
+                    etQtyOrder.text.clear()
+                } else {
+                    Toast.makeText(this, "Failed to create a new order.", Toast.LENGTH_SHORT).show()
+                }
             } else {
                 Toast.makeText(this, "Please fill in all the fields", Toast.LENGTH_SHORT).show()
             }
         }
     }
 }
-
-
-

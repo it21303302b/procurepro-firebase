@@ -28,6 +28,8 @@
     <string name="TvDeliveries">Deliveries</string>
     <string name="TvDate">Date</string>
     <string name="TvPrice">Price</string>
+    <string name="TvStatus">Status</string>
+    <string name="TvOrderStatus">Order Status</string>
 
 
 

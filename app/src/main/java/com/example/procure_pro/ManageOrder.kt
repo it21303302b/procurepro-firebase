@@ -26,7 +26,8 @@ class ManageOrder : AppCompatActivity() {
         val orderRef = database.getReference("orders")
 
         val orderList = ArrayList<OrderDB>()
-        val adapter = OrderAdapter(orderList)
+        val orderKeys = ArrayList<String>() // To store order keys
+        val adapter = OrderAdapter(orderList, orderKeys) // Pass the orderKeys to the adapter
         recyclerView.adapter = adapter
 
         // Query Firebase database for orders where siteManagerId matches the current user's userId
@@ -35,10 +36,12 @@ class ManageOrder : AppCompatActivity() {
         query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 orderList.clear()
+                orderKeys.clear()
                 for (snapshot in dataSnapshot.children) {
                     val order = snapshot.getValue(OrderDB::class.java)
                     if (order != null) {
                         orderList.add(order)
+                        orderKeys.add(snapshot.key!!) // Store the order key
                     }
                 }
                 adapter.notifyDataSetChanged()

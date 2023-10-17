@@ -113,15 +113,15 @@
                 android:textColor="@color/mid"
                 android:textStyle="bold" />
 
+
             <EditText
-                android:id="@+id/etPriceOrder"
+                android:id="@+id/etQtyOrder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/add_qty"
+                android:hint="Quantity"
                 android:inputType="textMultiLine"
                 android:textColor="@color/mid"
                 android:textSize="10dp" />
-
 
             <Button
                 android:id="@+id/btnUpdateOrder"
