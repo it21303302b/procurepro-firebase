@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.procure_pro.R
 
@@ -31,11 +32,29 @@ class OrderStatusAdapter(private val context: Context, private var orders: List<
         holder.quantityTextView.text = currentOrder.quantity
         holder.statusTextView.text = currentOrder.status
 
+        // Conditionally set text color based on the "status" value
+        when (currentOrder.status) {
+            "Approved" -> {
+                holder.statusTextView.setTextColor(ContextCompat.getColor(context, R.color.teal_700))
+            }
+            "Pending" -> {
+                holder.statusTextView.setTextColor(ContextCompat.getColor(context, R.color.mid))
+            }
+            "Declined" -> {
+                holder.statusTextView.setTextColor(ContextCompat.getColor(context, R.color.red))
+            }
+            else -> {
+                // Handle any other status values or set a default color
+                holder.statusTextView.setTextColor(ContextCompat.getColor(context, R.color.mid))
+            }
+        }
+
         // Handle item click here, similar to your other adapter
         holder.itemView.setOnClickListener {
             // Implement click handling if needed
         }
     }
+
 
     // Add this method to update the data in the adapter
     fun updateData(newData: List<OrderDB>) {

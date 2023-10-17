@@ -42,7 +42,7 @@ class AddOrder : AppCompatActivity() {
 
             if (siteName.isNotEmpty() && itemName.isNotEmpty() && quantityString.isNotEmpty()) {
                 // Create an OrderDB object with quantity as a string and initialize "status" to "pending"
-                val order = OrderDB(userId, siteName, itemName, quantityString, "pending")
+                val order = OrderDB(userId, siteName, itemName, quantityString, "Pending")
 
                 // Push the order data to Firebase database
                 val orderKey = orderRef.push().key
