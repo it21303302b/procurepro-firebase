@@ -14,5 +14,6 @@
     <color name="light">#91c4ff</color>
     <color name="dark">#14447b</color>
     <color name="mid">#E2C799</color>
+    <color name="red">#960000</color>
     <color name="txtShadow">#858585</color>
 </resources>

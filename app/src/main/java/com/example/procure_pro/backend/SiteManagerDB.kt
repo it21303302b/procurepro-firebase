@@ -1,4 +1,4 @@
-package com.example.procure_pro
+package com.example.procure_pro.backend
 
 data class SiteManagerDB(
     val _id: String,

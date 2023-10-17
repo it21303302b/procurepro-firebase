@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1028534109933",
+    "firebase_url": "https://procurepro-93708-default-rtdb.firebaseio.com",
+    "project_id": "procurepro-93708",
+    "storage_bucket": "procurepro-93708.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028534109933:android:7f231b338756605f67aee4",
+        "android_client_info": {
+          "package_name": "com.example.procure_pro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBg0kUzdVXnevd-7oGt9gbUb1xhGJYVQGM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

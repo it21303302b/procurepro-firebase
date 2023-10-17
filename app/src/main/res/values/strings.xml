@@ -20,19 +20,22 @@
     <string name="TVlogin">Enter Site Manager Name and Password</string>
     <string name="TvSite">Site</string>
     <string name="TvItem">Item</string>
-    <string name="TvPrice">Price</string>
+    <string name="TvQty">Quantity</string>
     <string name="TvAddress">Address</string>
     <string name="Tvorder_number">Order Number</string>
     <string name="TvPhone_number">Phone Number</string>
     <string name="Tvoreders">Oreders</string>
     <string name="TvDeliveries">Deliveries</string>
     <string name="TvDate">Date</string>
+    <string name="TvPrice">Price</string>
+
 
 
     <!--    buttons-->
 
     <string name="AddBtn">Add</string>
     <string name="UpdateBtn">Update</string>
+    <string name="DeleteBtn">Delete</string>
     <string name="productsBtn">Add purchase orders</string>
     <string name="sectionsBtn">Manage purchase orders</string>
     <string name="mapBtn">Order Status</string>
@@ -50,7 +53,7 @@
     <string name="add_phone_number">Add Phone Number</string>
     <string name="add_site_name">Add Site Name</string>
     <string name="add_item_name">Add Item Name</string>
-    <string name="add_price">Add Price</string>
+    <string name="add_qty">Add Quantity</string>
     <string name="add_address">Add Address</string>
 
 

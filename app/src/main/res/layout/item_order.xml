@@ -22,10 +22,10 @@
 
 
             <TextView
-                android:id="@+id/tvProductName"
+                android:id="@+id/tvItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Tvorder_number"
+                android:text="@string/TvItem"
                 android:textColor="@color/dark"
                 android:layout_marginStart="8dp"
                 android:textSize="20dp"
@@ -42,10 +42,10 @@
 
 
             <TextView
-                android:id="@+id/tvSection"
+                android:id="@+id/tvQty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/TvPrice"
+                android:text="@string/TvQty"
                 android:textColor="@color/black"
                 android:layout_marginStart="8dp"
                 android:textSize="15dp"
