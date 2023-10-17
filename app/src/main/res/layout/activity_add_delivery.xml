@@ -94,14 +94,17 @@
                 android:textColor="@color/mid"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/etDate"
+            <!-- ... Other views ... -->
+            <Button
+                android:id="@+id/btnPickDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/add_site_name"
-                android:inputType="textMultiLine"
+                android:hint="@string/hintpickdate"
+                android:inputType="none"
                 android:textColor="@color/mid"
                 android:textSize="10dp" />
+            <!-- ... Other views ... -->
+
 
             <TextView
                 android:id="@+id/tvItem"

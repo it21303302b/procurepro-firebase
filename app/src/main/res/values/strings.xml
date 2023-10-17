@@ -59,6 +59,7 @@
     <string name="add_item_name">Add Item Name</string>
     <string name="add_qty">Add Quantity</string>
     <string name="add_address">Add Address</string>
+    <string name="hintpickdate">pickdate</string>
 
 
 </resources>

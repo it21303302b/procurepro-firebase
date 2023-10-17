@@ -23,7 +23,7 @@ class DirectorDash : AppCompatActivity() {
     }
 
     fun DeliveryManagement(view: View){
-        val dashIntent = Intent(this,DirectorDeliveryManagement::class.java)
+        val dashIntent = Intent(this,DeliveryManagement::class.java)
         startActivity(dashIntent)
     }
 }
