@@ -13,6 +13,7 @@ class DirectorApproveOrder : AppCompatActivity() {
 
     private lateinit var database: FirebaseDatabase
     private lateinit var orderRef: DatabaseReference
+    private lateinit var selectedOrderKey: String // To store the key of the selected order
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,35 +46,45 @@ class DirectorApproveOrder : AppCompatActivity() {
         val btnApprove = findViewById<Button>(R.id.btnApprove)
         val btnDecline = findViewById<Button>(R.id.btnDecline)
 
+        // Find the order key based on siteManagerId
+        findOrderKey(siteManagerId)
+
         btnApprove.setOnClickListener {
-            // Set the status to "Approved" in the database
-            updateStatus("Approved")
-            Toast.makeText(this, "Order approved!", Toast.LENGTH_SHORT).show()
-            // Disable the buttons after clicking
-            btnApprove.isEnabled = false
-            btnDecline.isEnabled = false
+            // Set the status to "Approved" for the selected order
+            if (selectedOrderKey != null) {
+                updateStatus("Approved")
+                Toast.makeText(this, "Order approved!", Toast.LENGTH_SHORT).show()
+                // Disable the buttons after clicking
+                btnApprove.isEnabled = false
+                btnDecline.isEnabled = false
+            } else {
+                Toast.makeText(this, "Order not found", Toast.LENGTH_SHORT).show()
+            }
         }
 
         btnDecline.setOnClickListener {
-            // Set the status to "Declined" in the database
-            updateStatus("Declined")
-            Toast.makeText(this, "Order declined!", Toast.LENGTH_SHORT).show()
-            // Disable the buttons after clicking
-            btnApprove.isEnabled = false
-            btnDecline.isEnabled = false
+            // Set the status to "Declined" for the selected order
+            if (selectedOrderKey != null) {
+                updateStatus("Declined")
+                Toast.makeText(this, "Order declined!", Toast.LENGTH_SHORT).show()
+                // Disable the buttons after clicking
+                btnApprove.isEnabled = false
+                btnDecline.isEnabled = false
+            } else {
+                Toast.makeText(this, "Order not found", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
-    private fun updateStatus(newStatus: String) {
-        // Retrieve the unique key for the order based on the site manager ID
-        val siteManagerId = intent.getStringExtra("siteManagerId")
+    private fun findOrderKey(siteManagerId: String?) {
         if (siteManagerId != null) {
             orderRef.orderByChild("siteManagerId").equalTo(siteManagerId)
                 .addListenerForSingleValueEvent(object : ValueEventListener {
                     override fun onDataChange(dataSnapshot: DataSnapshot) {
                         for (orderSnapshot in dataSnapshot.children) {
-                            val orderKey = orderSnapshot.key
-                            orderRef.child(orderKey!!).child("status").setValue(newStatus)
+                            // Retrieve the key of the first order with the matching siteManagerId
+                            selectedOrderKey = orderSnapshot.key.toString()
+                            break // Exit the loop after finding the key
                         }
                     }
 
@@ -82,6 +93,13 @@ class DirectorApproveOrder : AppCompatActivity() {
                         Toast.makeText(this@DirectorApproveOrder, "Database error", Toast.LENGTH_SHORT).show()
                     }
                 })
+        }
+    }
+
+    private fun updateStatus(newStatus: String) {
+        // Update the status for the selected order
+        if (selectedOrderKey != null) {
+            orderRef.child(selectedOrderKey).child("status").setValue(newStatus)
         }
     }
 }
