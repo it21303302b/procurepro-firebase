@@ -39,7 +39,7 @@
     <string name="UpdateBtn">Update</string>
     <string name="ApproveBtn">Approve</string>
     <string name="DeleteBtn">Delete</string>
-    <string name="DeclineBtn">Dectilne</string>
+    <string name="DeclineBtn">Decline</string>
     <string name="productsBtn">Add purchase orders</string>
     <string name="sectionsBtn">Manage purchase orders</string>
     <string name="mapBtn">Order Status</string>
