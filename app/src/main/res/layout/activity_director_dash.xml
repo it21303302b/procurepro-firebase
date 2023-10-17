@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
-    tools:context=".Dashboard">
+    tools:context=".DirectorDash"
+    android:background="@color/bg">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
@@ -30,7 +30,7 @@
             android:shadowDx="2"
             android:shadowDy="2"
             android:shadowRadius="20"
-            android:text="@string/TvSiteManager"
+            android:text="@string/TvAdmin"
             android:textColor="@color/white"
             android:textSize="34sp"
             android:textStyle="bold"
@@ -61,22 +61,12 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/btnProductsAdmin"
-                android:layout_width="@dimen/btnWidth2"
-                android:layout_height="@dimen/btnHeight2"
-                android:layout_margin="20dp"
-                android:backgroundTint="@color/dark"
-                android:onClick="AddPurchase"
-                android:text="@string/productsBtn"
-                android:textColor="@color/white" />
-
-            <Button
                 android:id="@+id/btnSectionsAdmin"
                 android:layout_width="@dimen/btnWidth2"
                 android:layout_height="@dimen/btnHeight2"
                 android:layout_margin="20dp"
                 android:backgroundTint="@color/dark"
-                android:onClick="ManagePurchase"
+                android:onClick="ManageOrder"
                 android:text="@string/sectionsBtn"
                 android:textColor="@color/white" />
 
@@ -91,25 +81,16 @@
                 android:textColor="@color/white" />
 
             <Button
-                android:id="@+id/btnAddDelivery"
-                android:layout_width="@dimen/btnWidth2"
-                android:layout_height="@dimen/btnHeight2"
-                android:layout_margin="20dp"
-                android:backgroundTint="@color/dark"
-                android:onClick="AddDelivery"
-                android:text="@string/addDeliveryBtn"
-                android:textColor="@color/white" />
-
-            <Button
                 android:id="@+id/btnHomeAdmin"
                 android:layout_width="@dimen/btnWidth2"
                 android:layout_height="@dimen/btnHeight2"
                 android:layout_margin="20dp"
                 android:backgroundTint="@color/dark"
-                android:onClick="DeliverManagement"
+                android:onClick="DeliveryManagement"
                 android:text="@string/homeBtn"
                 android:textColor="@color/white" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

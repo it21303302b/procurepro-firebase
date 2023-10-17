@@ -41,18 +41,13 @@ class AddOrder : AppCompatActivity() {
             val quantityString = etQtyOrder.text.toString()
 
             if (siteName.isNotEmpty() && itemName.isNotEmpty() && quantityString.isNotEmpty()) {
-                // Create an OrderDB object with quantity as a string
-                val order = OrderDB(userId, siteName, itemName, quantityString)
+                // Create an OrderDB object with quantity as a string and initialize "status" to "pending"
+                val order = OrderDB(userId, siteName, itemName, quantityString, "pending")
 
                 // Push the order data to Firebase database
                 val orderKey = orderRef.push().key
                 if (orderKey != null) {
                     orderRef.child(orderKey).setValue(order)
-
-                    // Pass the orderKey to the UpdateOrder activity
-//                    val intent = Intent(this, Dashboard::class.java)
-//                    intent.putExtra("orderKey", orderKey)
-//                    startActivity(intent)
 
                     Toast.makeText(this, "Data inserted successfully!", Toast.LENGTH_SHORT).show()
 
@@ -67,5 +62,6 @@ class AddOrder : AppCompatActivity() {
                 Toast.makeText(this, "Please fill in all the fields", Toast.LENGTH_SHORT).show()
             }
         }
+
     }
 }

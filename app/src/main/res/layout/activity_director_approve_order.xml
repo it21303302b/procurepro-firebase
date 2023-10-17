@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DirectorApproveOrder"
+    android:background="@color/bg">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="125dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvAddNewSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:shadowColor="@color/light"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="4"
+                android:text="@string/TvUpdateOrder"
+                android:textAlignment="center"
+                android:textColor="@color/dark"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/dark">
+
+            </View>
+
+            <TextView
+                android:id="@+id/tvSiteManagerId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/TvStaffId"
+                android:textColor="@color/mid"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etSiteMgrId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/add_staff_id"
+                android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tvSite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/TvSite"
+                android:textColor="@color/mid"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etSiteName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/add_site_name"
+                android:inputType="textMultiLine"
+                android:textColor="@color/mid"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/tvItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/TvItem"
+                android:textColor="@color/mid"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etItemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/add_item_name"
+                android:inputType="textMultiLine"
+                android:textColor="@color/mid"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/TvQty"
+                android:textColor="@color/mid"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/etQtyOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Quantity"
+                android:inputType="textMultiLine"
+                android:textColor="@color/mid"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/btnApprove"
+                android:layout_width="@dimen/btnWidth"
+                android:layout_height="@dimen/btnHeight"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/ApproveBtn"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnDecline"
+                android:layout_width="@dimen/btnWidth"
+                android:layout_height="@dimen/btnHeight"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/red"
+                android:text="@string/DeclineBtn"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

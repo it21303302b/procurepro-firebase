@@ -6,7 +6,6 @@ data class OrderDB(
     var siteManagerId: String? = null,
     var siteName: String? = null,
     var itemName: String? = null,
-    var quantity: String? = null
+    var quantity: String? = null,
+    var status: String? = null
 ) : Serializable
-
-

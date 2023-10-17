@@ -36,11 +36,6 @@ class Dashboard : AppCompatActivity() {
         startActivity(dashIntent)
     }
 
-    fun SupplierManagement(view: View){
-        val dashIntent = Intent(this,OrderStatus::class.java)
-        startActivity(dashIntent)
-    }
-
     fun DeliverManagement(view: View){
         val dashIntent = Intent(this,DeliveryManagement::class.java)
         startActivity(dashIntent)

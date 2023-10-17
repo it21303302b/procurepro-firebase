@@ -12,6 +12,18 @@
         android:theme="@style/Theme.Procure_Pro"
         tools:targetApi="31">
         <activity
+            android:name=".DirectorDeliveryManagement"
+            android:exported="false" />
+        <activity
+            android:name=".DirectorApproveOrder"
+            android:exported="false" />
+        <activity
+            android:name=".DirectoOrderManagement"
+            android:exported="false" />
+        <activity
+            android:name=".DirectorDash"
+            android:exported="false" />
+        <activity
             android:name=".UpdateOrder"
             android:exported="false" />
         <activity

@@ -42,6 +42,8 @@ class MainActivity : AppCompatActivity() {
 
         val credentials = Credentials.customFunction(payload)
 
+        Toast.makeText(this, "Checking credentials. Please wait!", Toast.LENGTH_SHORT).show()
+
         app.loginAsync(credentials) { user ->
             if (user.isSuccess) {
                 // Successfully logged in
@@ -50,9 +52,16 @@ class MainActivity : AppCompatActivity() {
 
                 Toast.makeText(this, "Login success!", Toast.LENGTH_SHORT).show()
 
-                val dashIntent = Intent(this, Dashboard::class.java)
-                dashIntent.putExtra("userId", userId) // Pass the user's _id to AddOrder
-                startActivity(dashIntent)
+                // Check if the username is "Admin" and redirect to DirectorDash
+                if (username == "Admin") {
+                    val directorDashIntent = Intent(this, DirectorDash::class.java)
+                    startActivity(directorDashIntent)
+                } else {
+                    // If not "Admin," proceed to the Dashboard
+                    val dashIntent = Intent(this, Dashboard::class.java)
+                    dashIntent.putExtra("userId", userId) // Pass the user's _id to AddOrder
+                    startActivity(dashIntent)
+                }
             } else {
                 // Failed to login, handle the error
                 val error = user.getError()
@@ -60,6 +69,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
 
 
 }
