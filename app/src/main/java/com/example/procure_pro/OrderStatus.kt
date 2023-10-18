@@ -44,7 +44,7 @@ class OrderStatus : AppCompatActivity() {
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                // Handle database error if needed
+
             }
         })
     }

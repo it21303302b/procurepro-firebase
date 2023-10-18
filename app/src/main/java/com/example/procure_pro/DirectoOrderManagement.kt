@@ -33,7 +33,8 @@ class DirectoOrderManagement : AppCompatActivity() {
                 orderList.clear()
                 for (postSnapshot in snapshot.children) {
                     val order = postSnapshot.getValue(OrderDB::class.java)
-                    if (order != null) {
+                    if (order != null && order.status == "Pending") {
+                        // Only add orders with "Pending" status
                         orderList.add(order)
                     }
                 }
@@ -46,3 +47,4 @@ class DirectoOrderManagement : AppCompatActivity() {
         })
     }
 }
+

@@ -51,7 +51,7 @@ class OrderStatusAdapter(private val context: Context, private var orders: List<
 
         // Handle item click here, similar to your other adapter
         holder.itemView.setOnClickListener {
-            // Implement click handling if needed
+
         }
     }
 

@@ -3,6 +3,10 @@ package com.example.procure_pro
 import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
+import android.text.method.DigitsKeyListener
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -59,10 +63,16 @@ class AddDelivery : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            // Check if the phone number has exactly 10 digits
+            if (phoneNo.length != 10) {
+                Toast.makeText(this, "Phone number must be exactly 10 digits", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             // Create a DeliveryDB object with the data
             val deliveryData = DeliveryDB(site, address, date, phoneNo)
 
-            // Push the data to Firebase database
+            // Push the data to the Firebase database
             val deliveryId = databaseReference.push().key
             deliveryId?.let {
                 databaseReference.child(it).setValue(deliveryData)
@@ -77,6 +87,25 @@ class AddDelivery : AppCompatActivity() {
             // Display a toast message for successful insertion
             Toast.makeText(this, "Delivery added successfully", Toast.LENGTH_SHORT).show()
         }
+
+        // Set the input type and input filter for the etPhoneNo field
+        etPhoneNo.inputType = InputType.TYPE_CLASS_NUMBER
+        etPhoneNo.keyListener = DigitsKeyListener.getInstance("0123456789")
+
+        // Add a TextWatcher to limit input to 10 digits
+        etPhoneNo.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                if (s != null && s.length > 10) {
+                    etPhoneNo.setText(s.subSequence(0, 10))
+                    etPhoneNo.setSelection(etPhoneNo.text.length)
+                    Toast.makeText(this@AddDelivery, "Phone number must be exactly 10 digits", Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
     }
 
     private fun showDatePickerDialog() {

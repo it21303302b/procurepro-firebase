@@ -1,5 +1,6 @@
 package com.example.procure_pro
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -13,7 +14,6 @@ class DirectorApproveOrder : AppCompatActivity() {
 
     private lateinit var database: FirebaseDatabase
     private lateinit var orderRef: DatabaseReference
-    private lateinit var selectedOrderKey: String // To store the key of the selected order
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,61 +46,51 @@ class DirectorApproveOrder : AppCompatActivity() {
         val btnApprove = findViewById<Button>(R.id.btnApprove)
         val btnDecline = findViewById<Button>(R.id.btnDecline)
 
-        // Find the order key based on siteManagerId
-        findOrderKey(siteManagerId)
-
         btnApprove.setOnClickListener {
             // Set the status to "Approved" for the selected order
-            if (selectedOrderKey != null) {
-                updateStatus("Approved")
-                Toast.makeText(this, "Order approved!", Toast.LENGTH_SHORT).show()
-                // Disable the buttons after clicking
-                btnApprove.isEnabled = false
-                btnDecline.isEnabled = false
-            } else {
-                Toast.makeText(this, "Order not found", Toast.LENGTH_SHORT).show()
-            }
+            updateStatus("Approved", siteManagerId)
+            Toast.makeText(this, "Order approved!", Toast.LENGTH_SHORT).show()
+
+            // Redirect to DirectorDash activity
+            redirectToDirectorDash()
         }
 
         btnDecline.setOnClickListener {
             // Set the status to "Declined" for the selected order
-            if (selectedOrderKey != null) {
-                updateStatus("Declined")
-                Toast.makeText(this, "Order declined!", Toast.LENGTH_SHORT).show()
-                // Disable the buttons after clicking
-                btnApprove.isEnabled = false
-                btnDecline.isEnabled = false
-            } else {
-                Toast.makeText(this, "Order not found", Toast.LENGTH_SHORT).show()
-            }
+            updateStatus("Declined", siteManagerId)
+            Toast.makeText(this, "Order declined!", Toast.LENGTH_SHORT).show()
+
+            // Redirect to DirectorDash activity
+            redirectToDirectorDash()
         }
     }
 
-    private fun findOrderKey(siteManagerId: String?) {
+    private fun updateStatus(newStatus: String, siteManagerId: String?) {
         if (siteManagerId != null) {
-            orderRef.orderByChild("siteManagerId").equalTo(siteManagerId)
-                .addListenerForSingleValueEvent(object : ValueEventListener {
-                    override fun onDataChange(dataSnapshot: DataSnapshot) {
-                        for (orderSnapshot in dataSnapshot.children) {
-                            // Retrieve the key of the first order with the matching siteManagerId
-                            selectedOrderKey = orderSnapshot.key.toString()
-                            break // Exit the loop after finding the key
+            val query = orderRef.orderByChild("siteManagerId").equalTo(siteManagerId)
+            query.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    for (orderSnapshot in dataSnapshot.children) {
+                        val orderKey = orderSnapshot.key
+                        if (orderKey != null) {
+                            orderRef.child(orderKey).child("status").setValue(newStatus)
                         }
                     }
+                }
 
-                    override fun onCancelled(databaseError: DatabaseError) {
-                        // Handle the error
-                        Toast.makeText(this@DirectorApproveOrder, "Database error", Toast.LENGTH_SHORT).show()
-                    }
-                })
+                override fun onCancelled(databaseError: DatabaseError) {
+                    // Handle the error
+                    Toast.makeText(this@DirectorApproveOrder, "Database error", Toast.LENGTH_SHORT).show()
+                }
+            })
         }
     }
 
-    private fun updateStatus(newStatus: String) {
-        // Update the status for the selected order
-        if (selectedOrderKey != null) {
-            orderRef.child(selectedOrderKey).child("status").setValue(newStatus)
-        }
+    private fun redirectToDirectorDash() {
+        val intent = Intent(this, DirectoOrderManagement::class.java)
+        startActivity(intent)
+        finish() // Close the current activity
     }
 }
+
 

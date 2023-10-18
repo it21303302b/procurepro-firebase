@@ -39,7 +39,7 @@ class ManageOrder : AppCompatActivity() {
                 orderKeys.clear()
                 for (snapshot in dataSnapshot.children) {
                     val order = snapshot.getValue(OrderDB::class.java)
-                    if (order != null) {
+                    if (order != null && order.status == "Pending") {
                         orderList.add(order)
                         orderKeys.add(snapshot.key!!) // Store the order key
                     }
@@ -48,8 +48,9 @@ class ManageOrder : AppCompatActivity() {
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                // Handle any errors
+
             }
         })
     }
 }
+
